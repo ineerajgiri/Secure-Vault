@@ -1,0 +1,307 @@
+.vault-hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+  /* Light mode (default) */
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.dark .vault-hero {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.82));
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+}
+
+.vault-copy {
+  position: relative;
+  z-index: 1;
+  padding: 0.5rem 0;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  /* Light mode */
+  border: 1px solid rgba(37, 99, 235, 0.35);
+  background: rgba(37, 99, 235, 0.08);
+  color: #1d4ed8;
+}
+
+.dark .eyebrow {
+  border: 1px solid rgba(96, 165, 250, 0.45);
+  background: rgba(96, 165, 250, 0.12);
+  color: #dbeafe;
+}
+
+.vault-copy h1 {
+  margin: 1.2rem 0 1rem;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.075em;
+  font-weight: 900;
+  transition: color 0.3s ease;
+
+  /* Light mode */
+  color: #0f172a;
+}
+
+.dark .vault-copy h1 {
+  color: #f8fafc;
+}
+
+.vault-copy h1 span {
+  display: block;
+  transition: color 0.3s ease;
+
+  /* Light mode */
+  color: #2563eb;
+}
+
+.dark .vault-copy h1 span {
+  color: #7dd3fc;
+}
+
+.vault-copy p {
+  max-width: 38rem;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  line-height: 1.7;
+  transition: color 0.3s ease;
+
+  /* Light mode */
+  color: rgba(30, 41, 59, 0.75);
+}
+
+.dark .vault-copy p {
+  color: rgba(226, 232, 240, 0.8);
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-btn,
+.secondary-btn {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.4rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #60a5fa, #2563eb);
+  color: white;
+  box-shadow: 0 18px 30px rgba(37, 99, 235, 0.35);
+}
+
+.secondary-btn {
+  /* Light mode */
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.15);
+  color: #0f172a;
+}
+
+.dark .secondary-btn {
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  color: #e2e8f0;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.feature-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+
+  /* Light mode */
+  background: rgba(13, 148, 136, 0.08);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+  color: #0f766e;
+}
+
+.dark .feature-pill {
+  background: rgba(15, 118, 110, 0.18);
+  border: 1px solid rgba(45, 212, 191, 0.24);
+  color: #ccfbf1;
+}
+
+.vault-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+.vault-scene {
+  position: relative;
+  width: min(26rem, 75vw);
+  height: min(24rem, 68vw);
+  display: grid;
+  place-items: center;
+  perspective: 1200px;
+}
+
+.vault-orbit {
+  position: absolute;
+  inset: 10% 12%;
+  border: 1px solid rgba(96, 165, 250, 0.28);
+  border-radius: 50%;
+  transform: rotateX(70deg) rotateZ(20deg);
+  box-shadow: inset 0 0 30px rgba(96, 165, 250, 0.12);
+}
+
+.orbit-one {
+  animation: sway 9s ease-in-out infinite alternate;
+}
+
+.orbit-two {
+  inset: 18% 20%;
+  border-color: rgba(125, 211, 252, 0.3);
+  animation: sway 11s ease-in-out infinite alternate-reverse;
+}
+
+.vault-core {
+  position: relative;
+  width: 14rem;
+  height: 14rem;
+  transform-style: preserve-3d;
+  transform: rotateX(18deg) rotateY(-26deg) rotateZ(12deg);
+  animation: floatVault 6s ease-in-out infinite;
+}
+
+.vault-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.7rem;
+  border: 1px solid rgba(191, 219, 254, 0.35);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.88), rgba(15, 23, 42, 0.9));
+  box-shadow: 0 25px 55px rgba(37, 99, 235, 0.35);
+}
+
+.face-front {
+  display: grid;
+  place-items: center;
+  color: #eff6ff;
+  transform: translateZ(2rem);
+  backdrop-filter: blur(8px);
+}
+
+.face-side {
+  transform: translateX(1.25rem) translateZ(-1.5rem) rotateY(90deg);
+  background: linear-gradient(135deg, rgba(191, 219, 254, 0.22), rgba(37, 99, 235, 0.45));
+}
+
+.face-top {
+  transform: translateY(-1.2rem) translateZ(-1.2rem) rotateX(90deg);
+  background: linear-gradient(135deg, rgba(125, 211, 252, 0.25), rgba(30, 41, 59, 0.9));
+}
+
+@keyframes floatVault {
+  0%,
+  100% {
+    transform: rotateX(18deg) rotateY(-26deg) rotateZ(12deg) translateY(0px);
+  }
+  50% {
+    transform: rotateX(24deg) rotateY(-18deg) rotateZ(18deg) translateY(-10px);
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: rotateX(72deg) rotateZ(0deg) scale(1);
+  }
+  100% {
+    transform: rotateX(72deg) rotateZ(80deg) scale(1.08);
+  }
+}
+
+@media (max-width: 900px) {
+  .vault-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1.5rem 1rem;
+  }
+
+  .vault-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vault-copy p {
+    max-width: 32rem;
+  }
+
+  .cta-row,
+  .feature-row {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .vault-hero {
+    border-radius: 1.5rem;
+  }
+
+  .vault-copy h1 {
+    letter-spacing: -0.05em;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+
+  .vault-visual {
+    min-height: 300px;
+  }
+}
+/* Hide Edge/IE's built-in password reveal icon — humara custom eye icon use ho raha hai */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
