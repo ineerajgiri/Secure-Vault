@@ -8,13 +8,12 @@
 
 **A security-first, full-stack document storage platform.** Users upload, encrypt, tag, search, preview, and manage sensitive files through an authenticated, ownership-scoped API — built to demonstrate real backend engineering discipline, not just CRUD boilerplate.
 
+Every file is encrypted **before** it touches S3. Every endpoint checks resource ownership server-side. Every design trade-off is documented, not hidden.
+
 ## 🚀 Live Demo
 
 - **Frontend:** [https://secure-vault-tau.vercel.app](https://secure-vault-tau.vercel.app)
 - **Backend API:** [https://secure-vault-7i43.onrender.com](https://secure-vault-7i43.onrender.com)
-
-
-Every file is encrypted **before** it touches S3. Every endpoint checks resource ownership server-side. Every design trade-off is documented, not hidden.
 
 <!-- ![Dashboard Screenshot](./screenshots/dashboard.png) -->
 
