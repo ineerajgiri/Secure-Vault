@@ -8,6 +8,12 @@
 
 **A security-first, full-stack document storage platform.** Users upload, encrypt, tag, search, preview, and manage sensitive files through an authenticated, ownership-scoped API — built to demonstrate real backend engineering discipline, not just CRUD boilerplate.
 
+## 🚀 Live Demo
+
+- **Frontend:** [https://secure-vault-tau.vercel.app](https://secure-vault-tau.vercel.app)
+- **Backend API:** [https://secure-vault-7i43.onrender.com](https://secure-vault-7i43.onrender.com)
+
+
 Every file is encrypted **before** it touches S3. Every endpoint checks resource ownership server-side. Every design trade-off is documented, not hidden.
 
 <!-- ![Dashboard Screenshot](./screenshots/dashboard.png) -->
@@ -106,14 +112,22 @@ python manage.py runserver
 ```env
 SECRET_KEY=your-django-secret-key
 DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
 FERNET_KEY=your-fernet-key
 
-DATABASE_URL=postgres://user:password@localhost:5432/vault_db
+DB_NAME=your-db-name
+DB_USER=your-db-user
+DB_PASSWORD=your-db-password
+DB_HOST=your-db-host
+DB_PORT=5432
 
 AWS_ACCESS_KEY_ID=your-aws-access-key
 AWS_SECRET_ACCESS_KEY=your-aws-secret-key
-AWS_STORAGE_BUCKET_NAME=your-bucket-name
-AWS_S3_REGION_NAME=your-region
+AWS_S3_BUCKET_NAME=your-bucket-name
+AWS_S3_REGION=your-region
+
+CORS_ALLOWED_ORIGINS=http://localhost:5173
+CSRF_TRUSTED_ORIGINS=http://localhost:5173
 ```
 
 ### Frontend Setup
@@ -127,7 +141,7 @@ npm run dev
 
 **Required environment variables** (`frontend/.env`):
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8000/api
 ```
 
 ---
