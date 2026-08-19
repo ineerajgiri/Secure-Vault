@@ -1,8 +1,8 @@
 from django.contrib import admin
-
+from .models import Profile
 from .models import Document
 
-
+admin.site.register(Profile)
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
     list_display = ("filename", "owner", "uploaded_at", "s3_key")

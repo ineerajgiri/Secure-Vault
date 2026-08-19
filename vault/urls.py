@@ -1,10 +1,12 @@
 from django.urls import path
+# from vault.views import RegisterView
 
 from .views import (
     DocumentDeleteView,
     DocumentDownloadView,
     DocumentListCreateView,
     DocumentViewView,
+    RegisterView,
 )
 
 urlpatterns = [
@@ -24,4 +26,8 @@ urlpatterns = [
         DocumentDeleteView.as_view(),
         name="document-delete",
     ),
+    path("auth/register/", 
+         RegisterView.as_view(),
+         name="register"),
+
 ]

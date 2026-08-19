@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Security from './pages/Security';
 import ProtectedRoute from './components/ProtectedRoute';
+import Register from './pages/Register';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/security" element={<Security />} />
+        <Route path="/register" element={<Register />} />
        <Route
   path="/dashboard"
   element={

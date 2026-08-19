@@ -30,6 +30,11 @@ from .serializers import DocumentSerializer
 from .storage import StorageError, delete_from_s3, download_from_s3, upload_to_s3
 from .validators import parse_tags, validate_uploaded_file
 
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
+from django.contrib.auth.models import User
+from .serializers import RegisterSerializer
+
 # Score neeche 70 ke matlab "match nahi" — fuzzy tag search ke liye
 FUZZY_TAG_THRESHOLD = 70
 
@@ -202,3 +207,9 @@ class DocumentDeleteView(APIView):
 
         document.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]
