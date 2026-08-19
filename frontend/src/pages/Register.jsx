@@ -42,6 +42,9 @@ export default function Register() {
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-md items-center px-4 sm:px-6 lg:px-8">
       <div className="w-full rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+        <Link to="/" className="inline-block mb-4 text-sm text-gray-500 hover:text-gray-700">
+          ← Back
+        </Link>
         <h1 className="mb-6 text-2xl font-bold text-slate-900 dark:text-white">
           Create your VaultSecure account
         </h1>
